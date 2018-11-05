@@ -12,7 +12,7 @@ var items = {
   adrienne: { name: 'Adrienne', modifier: 2, description: "You can't let her see you lose.." }
 };
 function hits() {
-  setTimeout(bighitPic, 500)
+  setTimeout(bighitPic, 1);
   ivan.hits++;
   ivan.health -= addMods()
 };
@@ -38,15 +38,15 @@ function update() {
 };
 function rememberApollo() {
   ivan.currentItems.push(items.apollo);
-  setTimeout(dyingPic, 1000)
+  setTimeout(dyingPic, 1)
 };
 function forAmerica() {
   ivan.currentItems.push(items.america);
-  setTimeout(fistsPic, 1000)
+  setTimeout(fistsPic, 1)
 };
 function forAdrienne() {
   ivan.currentItems.push(items.adrienne);
-  setTimeout(lovePic, 1000)
+  setTimeout(lovePic, 1)
 };
 function addMods() {
   var modTotal = 0;
@@ -68,7 +68,11 @@ function fistsPic() {
 function dyingPic() {
   document.getElementById('dying').style.display = 'block';
 }
-
+function knockOut() {
+  if (ivan.health <= 0) {
+    document.getElementById('body').style.backgroundImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRS1VgXA6T2OPdwcSx2PPqL5CvZwvcL-x_MmlKmjoCHF1A3KSP"
+  }
+}
 var images = {
   ivanMain: "https://ewedit.files.wordpress.com/2015/11/rocky-iv.jpg",
   forAppollo: "http://images.tmz.com/2015/04/13/0413-rocky-4-movie-screenshot-3.jpg", //width="150px",
